@@ -153,9 +153,7 @@
                 var swatchStyle = rgbaSupport ? ("background-color:" + tiny.toRgbString()) : "filter:" + tiny.toFilter();
                 html.push('<span title="' + formattedString + '" data-color="' + tiny.toRgbString() + '" class="' + c + '"><span class="sp-thumb-inner" style="' + swatchStyle + ';" /></span>');
             } else {
-                var c = 'sp-thumb-el sp-clear-display'
-                var cls = 'sp-clear-palette-only'
-                html.push('<span class="' + c + '" ><span class="' + cls + '" style="background-color: transparent;" /></span>');
+                html.push('<span class="sp-thumb-el sp-clear-display" ><span class="sp-clear-palette-only" style="background-color: transparent;" /></span>');
             }
         }
         return "<div class='sp-cf " + className + "'>" + html.join('') + "</div>";
@@ -282,7 +280,7 @@
                 // if showPaletteOnly and didn't set initialcolor
                 // set initialcolor to first palette
                 if (opts.showPaletteOnly && !opts.color) {
-                    initialColor = (palette[0][0] == "") ? palette[0][0] : Object.keys(paletteLookup)[0]
+                    initialColor = (palette[0][0] == '') ? palette[0][0] : Object.keys(paletteLookup)[0];
                 }
             }
 
@@ -499,7 +497,7 @@
                 updateUI();
                 currentPreferredFormat = tinycolor(initialColor).format || opts.preferredFormat;
                 addColorToSelectionPalette(initialColor);
-            } else if (initialColor == "") {
+            } else if (initialColor == '') {
                 set(initialColor);
                 updateUI();
             } else {
