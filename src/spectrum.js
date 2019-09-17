@@ -280,7 +280,7 @@
                 // if showPaletteOnly and didn't set initialcolor
                 // set initialcolor to first palette
                 if (opts.showPaletteOnly && !opts.color) {
-                    initialColor = (palette[0][0] == '') ? palette[0][0] : Object.keys(paletteLookup)[0];
+                    initialColor = (palette[0][0] === '') ? palette[0][0] : Object.keys(paletteLookup)[0];
                 }
             }
 
@@ -497,7 +497,7 @@
                 updateUI();
                 currentPreferredFormat = tinycolor(initialColor).format || opts.preferredFormat;
                 addColorToSelectionPalette(initialColor);
-            } else if (initialColor == '') {
+            } else if (initialColor === '') {
                 set(initialColor);
                 updateUI();
             } else {
@@ -514,7 +514,6 @@
                     move();
                 }
                 else {
-                    console.log("--------------", $(e.target).closest(".sp-thumb-el").data("color"))
                     set($(e.target).closest(".sp-thumb-el").data("color"));
                     move();
 
