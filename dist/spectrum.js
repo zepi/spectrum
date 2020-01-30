@@ -153,13 +153,7 @@
                 var swatchStyle = rgbaSupport ? ("background-color:" + tiny.toRgbString()) : "filter:" + tiny.toFilter();
                 html.push('<span title="' + formattedString + '" data-color="' + tiny.toRgbString() + '" class="' + c + '"><span class="sp-thumb-inner" style="' + swatchStyle + ';" /></span>');
             } else {
-                var cls = 'sp-clear-display';
-                html.push($('<div />')
-                    .append($('<span data-color="" style="background-color:transparent;" class="' + cls + '"></span>')
-                        .attr('title', opts.noColorSelectedText)
-                    )
-                    .html()
-                );
+                html.push('<span class="sp-thumb-el sp-clear-display" ><span class="sp-clear-palette-only" style="background-color: transparent;" /></span>');
             }
         }
         return "<div class='sp-cf " + className + "'>" + html.join('') + "</div>";
@@ -256,7 +250,7 @@
             currentPreferredFormat = opts.preferredFormat,
             clickoutFiresChange = !opts.showButtons || opts.clickoutFiresChange,
             isEmpty = !initialColor,
-            allowEmpty = opts.allowEmpty && !isInputTypeColor;
+            allowEmpty = opts.allowEmpty;
 
         // Element to be updated with the input color. Populated in initialize method
         var originalInputContainer = null,
@@ -264,6 +258,19 @@
             colorizeElementInitialColor = null,
             colorizeElementInitialBackground = null;
 
+        //If there is a label for this element, when clicked on, show the colour picker
+        var thisId = boundElement.attr('id');
+        if(thisId !== undefined && thisId.length > 0) {
+            var label = $('label[for="'+thisId+'"]');
+            if(label.length) {
+                label.on('click', function(e){
+                    e.preventDefault();
+                    boundElement.spectrum('show');
+                    return false;
+                });
+            }
+        }
+        
         function applyOptions() {
 
             if (opts.showPaletteOnly) {
@@ -281,6 +288,12 @@
                         var rgb = tinycolor(paletteArray[i][j]).toRgbString();
                         paletteLookup[rgb] = true;
                     }
+                }
+
+                // if showPaletteOnly and didn't set initialcolor
+                // set initialcolor to first palette
+                if (opts.showPaletteOnly && !opts.color) {
+                    initialColor = (palette[0][0] === '') ? palette[0][0] : Object.keys(paletteLookup)[0];
                 }
             }
 
@@ -497,8 +510,10 @@
                 updateUI();
                 currentPreferredFormat = tinycolor(initialColor).format || opts.preferredFormat;
                 addColorToSelectionPalette(initialColor);
-            }
-            else {
+            } else if (initialColor === '') {
+                set(initialColor);
+                updateUI();
+            } else {
                 updateUI();
             }
 
@@ -535,13 +550,13 @@
 
         function updateSelectionPaletteFromStorage() {
 
-            if (localStorageKey && window.localStorage) {
-
+            if (localStorageKey) {
                 // Migrate old palettes over to new format.  May want to remove this eventually.
                 try {
-                    var oldPalette = window.localStorage[localStorageKey].split(",#");
+                    var localStorage = window.localStorage;
+                    var oldPalette = localStorage[localStorageKey].split(",#");
                     if (oldPalette.length > 1) {
-                        delete window.localStorage[localStorageKey];
+                        delete localStorage[localStorageKey];
                         $.each(oldPalette, function(i, c) {
                              addColorToSelectionPalette(c);
                         });
@@ -566,7 +581,7 @@
                     }
                 }
 
-                if (localStorageKey && window.localStorage) {
+                if (localStorageKey) {
                     try {
                         window.localStorage[localStorageKey] = selectionPalette.join(";");
                     }
@@ -748,7 +763,7 @@
             }
 
             var newColor, newHsv;
-            if (!color && allowEmpty) {
+            if ((!color || color === undefined) && allowEmpty) {
                 isEmpty = true;
             } else {
                 isEmpty = false;
@@ -1332,12 +1347,12 @@
         }
 
         var rgb = inputToRGB(color);
-        this._originalInput = color,
-        this._r = rgb.r,
-        this._g = rgb.g,
-        this._b = rgb.b,
-        this._a = rgb.a,
-        this._roundA = mathRound(1000 * this._a) / 1000,
+        this._originalInput = color;
+        this._r = rgb.r;
+        this._g = rgb.g;
+        this._b = rgb.b;
+        this._a = rgb.a;
+        this._roundA = mathRound(1000 * this._a) / 1000;
         this._format = opts.format || rgb.format;
         this._gradientType = opts.gradientType;
 
@@ -2513,6 +2528,23 @@
 })( jQuery );
 
 // Spectrum Colorpicker
+// Estonian (et) localization
+// https://github.com/bgrins/spectrum
+
+ (function ( $ ) {
+
+     var localization = $.spectrum.localization["et"] = {
+        cancelText: "Katkesta",
+        chooseText: "Vali",
+        clearText: "Tühista värvivalik",
+        noColorSelectedText: "Ühtki värvi pole valitud",
+        togglePaletteMoreText: "Rohkem",
+        togglePaletteLessText: "Vähem"
+    };
+
+ })( jQuery );
+
+// Spectrum Colorpicker
 // Persian (fa) localization
 // https://github.com/seballot/spectrum
 
@@ -2611,6 +2643,23 @@
 })( jQuery );
 
 // Spectrum Colorpicker
+// Hungarian (hu) localization
+// https://github.com/seballot/spectrum
+
+(function ( $ ) {
+
+  var localization = $.spectrum.localization["hu"] = {
+      cancelText: "Mégsem",
+      chooseText: "Mentés",
+      clearText: "A színválasztás visszaállítása",
+      noColorSelectedText: "Nincs szín kijelölve",
+      togglePaletteMoreText: "Több",
+      togglePaletteLessText: "Kevesebb"
+  };
+
+})( jQuery );
+
+// Spectrum Colorpicker
 // Indonesia/Bahasa Indonesia (id) localization
 // https://github.com/seballot/spectrum
 
@@ -2690,6 +2739,23 @@
 })( jQuery );
 
 // Spectrum Colorpicker
+// Norwegian, Bokmål (nb-no) localization
+// https://github.com/greendimka
+
+(function ( $ ) {
+
+    var localization = $.spectrum.localization["nb-no"] = {
+        cancelText: "Avbryte",
+        chooseText: "Velg",
+        clearText: "Tilbakestill",
+        noColorSelectedText: "Farge er ikke valgt",
+        togglePaletteMoreText: "Mer",
+        togglePaletteLessText: "Mindre"
+    };
+
+})( jQuery );
+
+// Spectrum Colorpicker
 // Dutch (nl-nl) localization
 // https://github.com/seballot/spectrum
 
@@ -2738,6 +2804,23 @@
     };
 
 })( jQuery );
+
+// Spectrum Colorpicker
+// Portuguese (pt-pt) localization
+// https://github.com/bgrins/spectrum
+
+ (function ( $ ) {
+
+     var localization = $.spectrum.localization["pt-pt"] = {
+        cancelText: "Cancelar",
+        chooseText: "Escolher",
+        clearText: "Limpar cor seleccionada",
+        noColorSelectedText: "Nenhuma cor seleccionada",
+        togglePaletteMoreText: "Mais",
+        togglePaletteLessText: "Menos"
+    };
+
+ })( jQuery );
 
 // Spectrum Colorpicker
 // Russian (ru) localization
