@@ -1334,12 +1334,12 @@
         }
 
         var rgb = inputToRGB(color);
-        this._originalInput = color,
-        this._r = rgb.r,
-        this._g = rgb.g,
-        this._b = rgb.b,
-        this._a = rgb.a,
-        this._roundA = mathRound(1000 * this._a) / 1000,
+        this._originalInput = color;
+        this._r = rgb.r;
+        this._g = rgb.g;
+        this._b = rgb.b;
+        this._a = rgb.a;
+        this._roundA = mathRound(1000 * this._a) / 1000;
         this._format = opts.format || rgb.format;
         this._gradientType = opts.gradientType;
 

@@ -5,7 +5,13 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     qunit: {
-      all: ['test/index.html', 'test/loaders.html']
+      all: ['test/index.html', 'test/loaders.html'],
+      options: {
+        puppeteer: {
+          headless: true,
+          args: ['--no-sandbox', '--disable-setuid-sandbox']
+        }
+      }
     },
 
     jshint: {
