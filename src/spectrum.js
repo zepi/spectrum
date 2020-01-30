@@ -148,7 +148,7 @@
             if(current) {
                 var tiny = tinycolor(current);
                 var c = tiny.toHsl().l < 0.5 ? "sp-thumb-el sp-thumb-dark" : "sp-thumb-el sp-thumb-light";
-                c += (tinycolor.equals(color, current)) ? " sp-thumb-active" : "";    
+                c += (tinycolor.equals(color, current)) ? " sp-thumb-active" : "";
                 var formattedString = tiny.toString(opts.preferredFormat || "rgb");
                 var swatchStyle = rgbaSupport ? ("background-color:" + tiny.toRgbString()) : "filter:" + tiny.toFilter();
                 html.push('<span title="' + formattedString + '" data-color="' + tiny.toRgbString() + '" class="' + c + '"><span class="sp-thumb-inner" style="' + swatchStyle + ';" /></span>');
@@ -537,13 +537,13 @@
 
         function updateSelectionPaletteFromStorage() {
 
-            if (localStorageKey && window.localStorage) {
-
+            if (localStorageKey) {
                 // Migrate old palettes over to new format.  May want to remove this eventually.
                 try {
-                    var oldPalette = window.localStorage[localStorageKey].split(",#");
+                    var localStorage = window.localStorage;
+                    var oldPalette = localStorage[localStorageKey].split(",#");
                     if (oldPalette.length > 1) {
-                        delete window.localStorage[localStorageKey];
+                        delete localStorage[localStorageKey];
                         $.each(oldPalette, function(i, c) {
                              addColorToSelectionPalette(c);
                         });
@@ -568,7 +568,7 @@
                     }
                 }
 
-                if (localStorageKey && window.localStorage) {
+                if (localStorageKey) {
                     try {
                         window.localStorage[localStorageKey] = selectionPalette.join(";");
                     }
