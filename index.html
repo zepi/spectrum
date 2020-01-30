@@ -68,12 +68,12 @@
     <h2>Usage</h2>
     <h3>CDN</h3>
 <pre>
-&lt;script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker@2.0.0/dist/spectrum.min.js"></script>
-&lt;link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker@2.0.0/dist/spectrum.min.css">
+&lt;script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
+&lt;link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
 </pre>
 
     <h3>npm</h3>
-    <pre>npm install spectrum-colorpicker</pre>
+    <pre>npm install spectrum-colorpicker2</pre>
 
     <h3>Download files</h3>
     <a href='https://github.com/seballot/spectrum/releases/latest' class="btn btn-primary">Download Zip</a>
@@ -1002,17 +1002,12 @@ $("input").spectrum("option", "showInput"); // false
             </div>
         </div>
 
-
-        <h2 id="skinning">Skinning</h2>
-
-        <p>Since it is all built with HTML/CSS, you can skin it easily.  There are two parts to the <a href='https://github.com/seballot/spectrumhttps://github.com/seballot/spectrum/blob/master/spectrum.css'>spectrum.css</a> file, the core rules (at the top of the file), and the themable rules (at the bottom).  Feel free to tweak these rules to make it look how you want.</p>
+        <h2 id="details">Other</h2>
 
         <h3 id="skinning-nonInput" class='point'>Non-input elements</h3>
         <p>
             You can use any element you would like to trigger the colorpicker: <a href='#' id='openWithLink'>Click me to open a colorpicker</a>, though it is strongly recommended to stick with <code>&lt;input&gt;</code> tags.
         </p>
-
-        <h2 id="details">Nitty Gritty</h2>
 
         <h3 id="modes-input" class='point'>input[type=color]</h3>
 
@@ -1093,52 +1088,6 @@ t.toHsl()       // {"h":0,"s":1,"l":0.5}
 t.toHslString() // "hsl(0, 100%, 50%)"
 t.toName()      // "red"
 </pre>
-
-        <h2 id="why">Why A Colorpicker?</h2>
-        <p><em>I wasn't satisfied with the solutions available for colorpicking</em>.
-        Many of them included a ton of images, were hard to skin or customize, or were very large plugins.
-        Here are the goals I had when making a new one:
-        </p>
-
-        <h3 id="why-footprint" class='point'>Small Footprint</h3>
-        <p>Just include the needed CSS and JavaScript files, and you are ready to go!  </p>
-<pre id='code-subheading'>
-&lt;script src='<a href='https://seballot.github.io/spectrum/spectrum.js' target="_blank">spectrum.js</a>'&gt;&lt;/script&gt;
-&lt;link rel='stylesheet' href='<a href='https://seballot.github.io/spectrum/spectrum.css' target="_blank">spectrum.css</a>' /&gt;
-</pre>
-        <p><strong>We don't need no stinkin' images!</strong></p>
-        <p>Nobody wants to add a bunch of code into their project.  Spectrum is contained in two files, and both are careful not to mess with your existing code.</p>
-
-        <h3 id="why-polyfill" class='point'>Polyfill</h3>
-        <p>I wanted an option for the most basic use case, a polyfill for the <a href='http://dev.w3.org/html5/markup/input.color.html'>input[type=color]</a> HTML5 control.
-           This mode needs to work without JavaScript enabled - and fallback to an input[type=text] like other HTML5 inputs.
-        </p>
-        <p>If you don't want this behavior to happen, but still want to use spectrum elsewhere on the page, you can set <code>$.fn.spectrum.load = false;</code> right after loading the script file.</p>
-
-
-        <h3 id="why-customizable" class='point'>Customizable</h3>
-        <p>Just because you don't <em>have</em> to change anything to get it to work, doesn't mean you <em>can't</em>!
-        It is easy to skin and customize the plugin with CSS, and there are a wide range of modes and options to explore.
-        </p>
-
-        <h3 id="why-mobile" class='point'>Mobile Support</h3>
-        <p>Along with desktop browser support, I wanted a mobile colorpicker that was touch friendly, worked in iOS and Android, and used standards
-            that maximize future mobile support.
-        </p>
-
-        <h3 id="why-devtools" class='point'>Devtools</h3>
-
-        <p>
-            Believe it or not, <strong>this colorpicker lives inside of Chrome, Firefox, and Safari devtools</strong> to make picking colors easier for web developers and designers.
-        </p>
-
-        <p>
-            When I started the project, I wrote about <a href="http://www.briangrinstead.com/blog/chrome-developer-tools-colorpicker-concept">developer tools concept colorpicker implementation</a>.  After that, I was <a href="http://groups.google.com/group/google-chrome-developer-tools/browse_thread/thread/4dd1e853b8051727/4549a6f0788885d4">contacted on the devtools mailing list</a> and got some initial feedback about the possibility of integrating it with devtools.  Then I pulled the jQuery dependency out of a branch and I submitted a patch to the WebKit project.
-        </p>
-
-        <p>
-            From there, I opened a <a href="https://bugs.webkit.org/show_bug.cgi?id=71262">bug</a> to start working on it Web Inspector.  50+ comments and 10 patches later, the case <a href="http://www.webkit.org/blog/1804/last-week-in-webkit-calculated-css-values-and-the-translate-attribute/">landed in WebKit</a>. Here is the <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=911702'>Firefox bug</a> where it was added.
-        </p>
 
     <div class='footer'>
         <h2>Share</h2>
