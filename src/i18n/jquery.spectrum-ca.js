@@ -1,6 +1,6 @@
 // Spectrum Colorpicker
 // Catalan (ca) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 

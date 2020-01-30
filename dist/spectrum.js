@@ -1,5 +1,5 @@
 // Spectrum Colorpicker v1.8.0
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 // Author: Brian Grinstead
 // License: MIT
 
@@ -2417,7 +2417,7 @@
 
 // Spectrum Colorpicker
 // Arabic (ar) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 (function ( $ ) {
 
   var localization = $.spectrum.localization["ar"] = {
@@ -2433,7 +2433,7 @@
 
 // Spectrum Colorpicker
 // Catalan (ca) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2450,7 +2450,7 @@
 
 // Spectrum Colorpicker
 // Czech (cs) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 // author localization cs Pavel Laupe Dvorak pavel@pavel-dvorak.cz
 
 (function ( $ ) {
@@ -2467,7 +2467,7 @@
 })( jQuery );
 // Spectrum Colorpicker
 // German (de) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2484,7 +2484,7 @@
 
 // Spectrum Colorpicker
 // Danish (dk) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2497,7 +2497,7 @@
 
 // Spectrum Colorpicker
 // Spanish (es) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2514,7 +2514,7 @@
 
 // Spectrum Colorpicker
 // Persian (fa) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2531,7 +2531,7 @@
 
 // Spectrum Colorpicker
 // Finnish (fi) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2544,7 +2544,7 @@
 
 // Spectrum Colorpicker
 // French (fr) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2561,7 +2561,7 @@
 
 // Spectrum Colorpicker
 // Greek (gr) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2578,7 +2578,7 @@
 
 // Spectrum Colorpicker
 // Hebrew (he) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2595,7 +2595,7 @@
 
 // Spectrum Colorpicker
 // Croatian (hr) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2612,7 +2612,7 @@
 
 // Spectrum Colorpicker
 // Indonesia/Bahasa Indonesia (id) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2629,7 +2629,7 @@
 
 // Spectrum Colorpicker
 // Italian (it) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2644,7 +2644,7 @@
 
 // Spectrum Colorpicker
 // Japanese (ja) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2657,7 +2657,7 @@
 
 // Spectrum Colorpicker
 // Korean (ko) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2691,7 +2691,7 @@
 
 // Spectrum Colorpicker
 // Dutch (nl-nl) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2707,7 +2707,7 @@
 
 // Spectrum Colorpicker
 // Polish (pl) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2724,7 +2724,7 @@
 
 // Spectrum Colorpicker
 // Brazilian (pt-br) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2741,7 +2741,7 @@
 
 // Spectrum Colorpicker
 // Russian (ru) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2758,7 +2758,7 @@
 
 // Spectrum Colorpicker
 // Swedish (sv) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2771,7 +2771,7 @@
 
 // Spectrum Colorpicker
 // Turkish (tr) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2784,7 +2784,7 @@
 
 // Spectrum Colorpicker
 // Simplified Chinese (zh-cn) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
@@ -2801,7 +2801,7 @@
 
 // Spectrum Colorpicker
 // Traditional Chinese (zh-tw) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 

@@ -1,5 +1,5 @@
 // Spectrum Colorpicker Tests
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 // Author: Brian Grinstead
 // License: MIT
 
@@ -480,7 +480,7 @@ test( "Options Can Be Set and Gotten Programmatically", function() {
   equal ( appendToParent.spectrum("container").parent()[0], container[0], "Passing 'parent' to appendTo works as expected");
 
 
-  // Issue #70 - https://github.com/bgrins/spectrum/issues/70
+  // Issue #70 - https://github.com/seballot/spectrum/issues/70
   equal (spec.spectrum("option", "showPalette"), true, "showPalette is true by default");
   spec.spectrum("option", "showPalette", false);
 
@@ -683,7 +683,7 @@ test( "Methods work as described", function() {
   el.spectrum("destroy");
 });
 
-// https://github.com/bgrins/spectrum/issues/97
+// https://github.com/seballot/spectrum/issues/97
 test( "Change events fire as described" , function() {
 
   expect(0);

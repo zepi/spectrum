@@ -1,6 +1,6 @@
 {
-    "name": "spectrum-colorpicker",
-    "description": "Spectrum: the no hassle jQuery colorpicker",
+    "name": "spectrum-colorpicker2",
+    "description": "Spectrum: The No Hassle jQuery Colorpicker",
     "version": "2.0.0",
     "main": "spectrum.js",
     "license": "MIT",
@@ -11,10 +11,10 @@
         "colorpicker",
         "ui"
     ],
-    "homepage": "http://bgrins.github.io/spectrum",
+    "homepage": "http://seballot.github.io/spectrum",
     "repository": {
         "type": "git",
-        "url": "https://bgrins.github.com/spectrum"
+        "url": "https://seballot.github.com/spectrum"
     },
     "author": {
         "name": "Brian Grinstead",

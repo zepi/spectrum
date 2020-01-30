@@ -1,6 +1,6 @@
 // Spectrum Colorpicker
 // Arabic (ar) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 (function ( $ ) {
 
   var localization = $.spectrum.localization["ar"] = {

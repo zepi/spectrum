@@ -1,6 +1,6 @@
 // Spectrum Colorpicker
 // Dutch (nl-nl) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 

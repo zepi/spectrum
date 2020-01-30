@@ -1,6 +1,6 @@
 /***
 Spectrum Colorpicker v1.8.0
-https://github.com/bgrins/spectrum
+https://github.com/seballot/spectrum
 Author: Brian Grinstead
 License: MIT
 ***/
@@ -12,7 +12,7 @@ License: MIT
     display:inline-block;
     *display: inline;
     *zoom: 1;
-    /* https://github.com/bgrins/spectrum/issues/40 */
+    /* https://github.com/seballot/spectrum/issues/40 */
     z-index: 9999994;
     overflow: hidden;
 }

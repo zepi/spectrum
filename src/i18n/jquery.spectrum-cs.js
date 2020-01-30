@@ -1,6 +1,6 @@
 // Spectrum Colorpicker
 // Czech (cs) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 // author localization cs Pavel Laupe Dvorak pavel@pavel-dvorak.cz
 
 (function ( $ ) {

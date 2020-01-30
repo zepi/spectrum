@@ -1,6 +1,6 @@
 // Spectrum Colorpicker
 // Indonesia/Bahasa Indonesia (id) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 

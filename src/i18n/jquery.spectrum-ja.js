@@ -1,6 +1,6 @@
 // Spectrum Colorpicker
 // Japanese (ja) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 

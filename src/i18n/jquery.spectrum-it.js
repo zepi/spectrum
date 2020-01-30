@@ -1,6 +1,6 @@
 // Spectrum Colorpicker
 // Italian (it) localization
-// https://github.com/bgrins/spectrum
+// https://github.com/seballot/spectrum
 
 (function ( $ ) {
 
