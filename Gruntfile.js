@@ -45,6 +45,10 @@ module.exports = function(grunt) {
         src: ['src/spectrum.css'],
         dest: 'dist/spectrum.css',
       },
+      scss: { // Provide scss file as well see https://github.com/seballot/spectrum/issues/5 
+        src: ['src/spectrum.css'],
+        dest: 'dist/spectrum.scss',
+      }
     },
 
     uglify: {
