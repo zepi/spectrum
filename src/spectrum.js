@@ -292,7 +292,7 @@
 
                 // if showPaletteOnly and didn't set initialcolor
                 // set initialcolor to first palette
-                if (opts.showPaletteOnly && !opts.color) {
+                if (opts.showPaletteOnly && !initialColor) {
                     initialColor = (palette[0][0] === '') ? palette[0][0] : Object.keys(paletteLookup)[0];
                 }
             }
