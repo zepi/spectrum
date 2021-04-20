@@ -367,7 +367,7 @@
 
             offsetElement.on("click.spectrum touchstart.spectrum", function (e) {
                 if (!disabled) {
-                    toggle();
+                    show();
                 }
 
                 e.stopPropagation();
