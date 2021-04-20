@@ -57,7 +57,9 @@ function updateColorPickerAndJavascriptCode() {
     for(var i in options) {
         if (options[i] != $.fn.spectrum.defaults[i]) {
             optionsCount++;
-            javascriptCode += "\n  " + i + ': "' + options[i] + '",';
+            var val = options[i];
+            if (typeof val === "string" && val != "true" && val != "false") val = '"' + options[i] + '"'
+            javascriptCode += "\n  " + i + ': ' + val + ',';
         }
     }
     if (optionsCount > 0) {
