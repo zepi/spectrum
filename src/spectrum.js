@@ -1,8 +1,3 @@
-// Spectrum Colorpicker v2.0.0
-// https://github.com/seballot/spectrum
-// Author: Brian Grinstead and spectrum contributors
-// License: MIT
-
 (function (factory) {
     "use strict";
 
