@@ -1,8 +1,3 @@
-// Spectrum Colorpicker v2.0.0
-// https://github.com/seballot/spectrum
-// Author: Brian Grinstead and spectrum contributors
-// License: MIT
-
 (function (factory) {
     "use strict";
 
@@ -2473,13 +2468,14 @@
     var localization = $.spectrum.localization["cs"] = {
         cancelText: "zrušit",
         chooseText: "vybrat",
-        clearText: "Resetovat výměr barev",
+        clearText: "Resetovat výběr barev",
         noColorSelectedText: "Žádná barva nebyla vybrána",
         togglePaletteMoreText: "více",
         togglePaletteLessText: "méně"
     };
 
 })( jQuery );
+
 // Spectrum Colorpicker
 // German (de) localization
 // https://github.com/seballot/spectrum
