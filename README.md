@@ -49,6 +49,4 @@ If you'd like to run the development version, spectrum uses Grunt to automate th
 
 ### Internationalization
 
-If you are able to translate the text in the UI to another language, please do!  You can do so by either [filing a pull request](https://github.com/seballot/spectrum/pulls) or [opening an issue]( https://github.com/seballot/spectrum/issues) with the translation. The existing languages are listed at: https://github.com/seballot/spectrum/tree/master/i18n.
-
-For an example, see the [Dutch translation](i18n/jquery.spectrum-nl.js).
+If you are able to translate the text in the UI to another language, please do!  You can do so by either [filing a pull request](https://github.com/seballot/spectrum/pulls) or [opening an issue]( https://github.com/seballot/spectrum/issues) with the translation. The existing languages are listed at: https://github.com/seballot/spectrum/tree/master/src/i18n
