@@ -698,6 +698,8 @@
             $(doc).on("keydown.spectrum", onkeydown);
             $(doc).on("click.spectrum", clickout);
             $(window).on("resize.spectrum", resize);
+            
+            replacer.attr("aria-expanded", true);
             replacer.addClass("sp-active");
             container.removeClass("sp-hidden");
 
@@ -744,6 +746,7 @@
             $(doc).off("click.spectrum", clickout);
             $(window).off("resize.spectrum", resize);
 
+            replacer.attr("aria-expanded", false);
             replacer.removeClass("sp-active");
             container.addClass("sp-hidden");
 
