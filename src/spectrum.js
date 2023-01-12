@@ -80,8 +80,8 @@
     })(),
     replaceInput = [
         "<button type='button' class='sp-replacer'>",
-            "<div class='sp-preview'><div class='sp-preview-inner'></div></div>",
-            "<div class='sp-dd'>&#9660;</div>",
+            "<span class='sp-preview'><span class='sp-preview-inner'></span></span>",
+            "<span class='sp-dd'>&#9660;</span>",
         "</button>"
     ].join(''),
     markup = (function () {
