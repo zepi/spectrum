@@ -79,10 +79,10 @@
         return contains(style.backgroundColor, 'rgba') || contains(style.backgroundColor, 'hsla');
     })(),
     replaceInput = [
-        "<div class='sp-replacer'>",
+        "<button type='button' class='sp-replacer'>",
             "<div class='sp-preview'><div class='sp-preview-inner'></div></div>",
             "<div class='sp-dd'>&#9660;</div>",
-        "</div>"
+        "</button>"
     ].join(''),
     markup = (function () {
 
@@ -128,7 +128,7 @@
                     "</div>",
                     "<div class='sp-initial sp-thumb sp-cf'></div>",
                     "<div class='sp-button-container sp-cf'>",
-                        "<button class='sp-cancel' href='#'></button>",
+                        "<button type='button' class='sp-cancel'></button>",
                         "<button type='button' class='sp-choose'></button>",
                     "</div>",
                 "</div>",
