@@ -110,7 +110,7 @@
                             "<div class='sp-color'>",
                                 "<div class='sp-sat'>",
                                     "<div class='sp-val'>",
-                                        "<div class='sp-dragger'></div>",
+                                        "<div class='sp-dragger' tabindex='0'></div>",
                                     "</div>",
                                 "</div>",
                             "</div>",
