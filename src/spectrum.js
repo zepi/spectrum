@@ -976,6 +976,7 @@
             alphaSlideHelperWidth = alphaSlideHelper.width();
 
             if (!flat) {
+                container.attr("aria-haspopup", true);
                 container.css("position", "absolute");
                 if (opts.offset) {
                     container.offset(opts.offset);
