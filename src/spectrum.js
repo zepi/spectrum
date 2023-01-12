@@ -378,6 +378,13 @@
 
             // Prevent clicks from bubbling up to document.  This would cause it to be hidden.
             container.on("click", stopPropagation);
+            
+            container.on("keydown", "div[role="button"]", function(e) {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    $(this).click();
+                }
+            });
 
             // Handle user typed input
             [textInput, boundElement].forEach(function(input) {
