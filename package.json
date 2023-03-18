@@ -14,7 +14,7 @@
     "homepage": "http://seballot.github.io/spectrum",
     "repository": {
         "type": "git",
-        "url": "https://seballot.github.com/spectrum"
+        "url": "https://github.com/seballot/spectrum.git"
     },
     "author": {
         "name": "Sebastian Castro",

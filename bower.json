@@ -2,8 +2,8 @@
   "name": "spectrum",
   "version": "2.0.0",
   "main": ["dist/spectrum.min.css", "dist/spectrum.min.js"],
-  "docs": "http://seballot.github.com/spectrum",
-  "homepage": "http://seballot.github.com/spectrum",
+  "docs": "http://seballot.github.io/spectrum",
+  "homepage": "http://seballot.github.io/spectrum",
   "demo": "http://jsfiddle.net/bgrins/ctkY3/",
   "dependencies": {
     "jquery": ">=1.7.2"
