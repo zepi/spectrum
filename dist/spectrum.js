@@ -1046,6 +1046,11 @@
             if (optionName === "preferredFormat") {
                 currentPreferredFormat = opts.preferredFormat;
             }
+
+            if (optionName === "allowEmpty") {
+                allowEmpty = opts.allowEmpty;
+            }
+
             applyOptions();
         }
 
