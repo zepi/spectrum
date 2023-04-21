@@ -382,6 +382,15 @@
                     e.preventDefault();
                 }
             });
+            
+            colorizeElement.on("click.spectrum touchstart.spectrum", function (e) {
+                if (!disabled) {
+                    show();
+                }
+
+                e.stopPropagation();
+            });
+
 
             if(boundElement.is(":disabled") || (opts.disabled === true)) {
                 disable();
