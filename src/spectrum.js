@@ -332,7 +332,7 @@
                     "<div class='sp-colorize'></div> ",
                 "</div>"].join(''));
 
-                const addOnWidth = boundElement.outerHeight();
+                var addOnWidth = boundElement.outerHeight();
 
                 // if value isn't falsy (0, null, undefined cf : https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
                 if (addOnWidth) {
