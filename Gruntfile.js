@@ -70,6 +70,58 @@ module.exports = function(grunt) {
           ext: '.min.css'
         }]
       }
+    },
+
+    watch: {
+      concat: {
+        files: ['src/spectrum.js'],
+        tasks: ['concat'],
+        options: {
+            livereload: true
+        }
+      },
+      uglify: {
+        files: ['dist/spectrum.js'],
+        tasks: ['uglify'],
+        options: {
+          livereload: true
+        }
+      },
+      html: {
+        files: 'index.html',
+        options: {
+          livereload: true,
+        }
+      },
+      gruntfile: {
+        files: ['Gruntfile.js'],
+        options: {
+            livereload: true
+        }
+      },
+      livereload: {
+        options: {
+            livereload: true
+        },
+        files: [
+            'index.html',
+            'src/*.js'
+        ]
+      },
+      options: {
+          livereload: true,
+      },
+    },
+
+    connect: {
+      server: {
+        options: {
+          livereload: true,
+          open: true,
+          port: 9001,
+          hostname: 'localhost'
+        }
+      }
     }
 
   });
@@ -80,6 +132,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Testing tasks
   grunt.registerTask('test', ['jshint', 'qunit']);
@@ -92,5 +146,8 @@ module.exports = function(grunt) {
 
   //Build Task.
   grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'cssmin']);
+
+  // Dev task.
+  grunt.registerTask('dev', ['connect', 'watch']);
 
 };

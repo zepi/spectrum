@@ -11,6 +11,11 @@
         "colorpicker",
         "ui"
     ],
+    "scripts": {
+        "dev": "grunt watch && grunt connect",
+        "build": "grunt build",
+        "test": "grunt"
+    },
     "homepage": "http://seballot.github.io/spectrum",
     "repository": {
         "type": "git",
@@ -23,9 +28,11 @@
     "devDependencies": {
         "grunt": "~1.0.4",
         "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-connect": "^3.0.0",
         "grunt-contrib-cssmin": "^3.0.0",
         "grunt-contrib-jshint": "~2.1.0",
         "grunt-contrib-qunit": "~1.3.0",
-        "grunt-contrib-uglify": "~4.0.1"
+        "grunt-contrib-uglify": "~4.0.1",
+        "grunt-contrib-watch": "^1.1.0"
     }
 }
