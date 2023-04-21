@@ -12,7 +12,7 @@
         "ui"
     ],
     "scripts": {
-        "dev": "grunt watch && grunt connect",
+        "dev": "grunt dev",
         "build": "grunt build",
         "test": "grunt"
     },
