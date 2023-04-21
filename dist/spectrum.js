@@ -331,9 +331,20 @@
                 var addOn = $(["<div class='sp-colorize-container sp-add-on'>",
                     "<div class='sp-colorize'></div> ",
                 "</div>"].join(''));
-                addOn.width(boundElement.outerHeight() + 'px')
-                     .css('border-radius', boundElement.css('border-radius'))
-                     .css('border', boundElement.css('border'));
+
+                var addOnWidth = boundElement.outerHeight();
+
+                // if value isn't falsy (0, null, undefined cf : https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
+                if (addOnWidth) {
+                    addOn.width(addOnWidth + 'px')
+                        .css('border-radius', boundElement.css('border-radius'))
+                        .css('border', boundElement.css('border'));
+                } else {
+                    // Less js processing..
+                    addOn
+                        .css('border-radius', boundElement.css('border-radius'))
+                        .css('border', boundElement.css('border'));
+                }
                 boundElement.addClass('with-add-on').before(addOn);
             }
 
@@ -371,6 +382,15 @@
                     e.preventDefault();
                 }
             });
+            
+            colorizeElement.on("click.spectrum touchstart.spectrum", function (e) {
+                if (!disabled) {
+                    show();
+                }
+
+                e.stopPropagation();
+            });
+
 
             if(boundElement.is(":disabled") || (opts.disabled === true)) {
                 disable();
