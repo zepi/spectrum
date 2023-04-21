@@ -74,7 +74,7 @@ module.exports = function(grunt) {
 
     watch: {
       concat: {
-        files: ['src/spectrum.js'],
+        files: ['src/spectrum.js', 'src/spectrum.css'],
         tasks: ['concat'],
         options: {
             livereload: true
