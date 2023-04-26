@@ -47,7 +47,6 @@
         togglePaletteMoreText: "more",
         togglePaletteLessText: "less",
         clearText: "Clear Color Selection",
-        noColorSelectedText: "No Color Selected",
         preferredFormat: "name",
         className: "", // Deprecated - use containerClassName and replacerClassName instead.
         containerClassName: "",
