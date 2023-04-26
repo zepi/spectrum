@@ -40,9 +40,9 @@ Steps to reproduce:
 2.
 3.
 
-Expected result:
+Expected result: please join screenshot, video, or [jsfiddle](https://jsfiddle.net/)
 
-Actual result:
+Actual result: please join screenshot, video, or [jsfiddle](https://jsfiddle.net/)
 
 [you can add explanations here of the context/what you were trying to
 do, and if you have findings about what the cause might be]
