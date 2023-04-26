@@ -30,7 +30,7 @@
         showInput: false,
         allowEmpty: true,
         showButtons: true,
-        clickoutFiresChange: false,
+        clickoutFiresChange: true,
         closeOnClickout: true,
         showInitial: false,
         showPalette: true,

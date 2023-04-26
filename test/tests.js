@@ -120,7 +120,7 @@ QUnit.test( "Events Fire (text input change)", function(assert) {
 
   el.spectrum("container").find(".sp-input").val("blue").trigger("change");
   count++;
-  el.spectrum("container").find(".sp-choose").click();
+  el.spectrum("container").find(".sp-choose").trigger('click');
   el.spectrum("destroy");
 
   assert.equal(count, 3, "All events fired");
@@ -206,10 +206,10 @@ QUnit.test( "Palette Events Fire In Correct Order ", function(assert) {
     count++;
   });
 
-  el.spectrum("container").find(".sp-thumb-el:last-child").click();
+  el.spectrum("container").find(".sp-thumb-el:last-child").trigger('click');
   assert.equal(count, 1, "Change event hasn't fired after palette click");
 
-  el.spectrum("container").find(".sp-choose").click();
+  el.spectrum("container").find(".sp-choose").trigger('click');
   assert.equal(count, 2, "Change event has fired after choose button click");
 
   el.spectrum("destroy");
@@ -242,10 +242,10 @@ QUnit.test( "Palette click events work", function(assert) {
     }
   }).spectrum("show");
 
-  el.spectrum("container").find(".sp-thumb-el:nth-child(3)").click();
-  el.spectrum("container").find(".sp-thumb-el:nth-child(2) .sp-thumb-inner").click();
-  el.spectrum("container").find(".sp-thumb-el:nth-child(1) .sp-thumb-inner").click();
-  el.spectrum("container").find(".sp-choose").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(3)").trigger('click');
+  el.spectrum("container").find(".sp-thumb-el:nth-child(2) .sp-thumb-inner").trigger('click');
+  el.spectrum("container").find(".sp-thumb-el:nth-child(1) .sp-thumb-inner").trigger('click');
+  el.spectrum("container").find(".sp-choose").trigger('click');
 
   assert.equal(el.val(), "red", "Element's value is set");
   el.spectrum("destroy");
@@ -273,10 +273,10 @@ QUnit.test( "Palette doesn't changes don't stick if cancelled", function(assert)
     }
   }).spectrum("show");
 
-  el.spectrum("container").find(".sp-thumb-el:nth-child(3)").click();
-  el.spectrum("container").find(".sp-thumb-el:nth-child(2)").click();
-  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").click();
-  el.spectrum("container").find(".sp-cancel").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(3)").trigger('click');
+  el.spectrum("container").find(".sp-thumb-el:nth-child(2)").trigger('click');
+  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").trigger('click');
+  el.spectrum("container").find(".sp-cancel").trigger('click');
 
   assert.equal(el.val(), "orange", "Element's value is the same");
   el.spectrum("destroy");
@@ -292,7 +292,7 @@ QUnit.test( "hideAfterPaletteSelect: Palette stays open after color select when 
   });
 
   el.spectrum("show");
-  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").trigger('click');
 
   assert.ok(!el.spectrum("container").hasClass('sp-hidden'), "palette is still visible after color selection");
   el.spectrum("destroy");
@@ -312,7 +312,7 @@ QUnit.test( "hideAfterPaletteSelect: Palette closes after color select when true
   });
 
   el.spectrum("show");
-  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").trigger('click');
 
   assert.ok(el.spectrum("container").hasClass('sp-hidden'), "palette is still hidden after color selection");
   el.spectrum("destroy");
@@ -375,7 +375,7 @@ QUnit.test("clickoutFiresChange", function(assert) {
   assert.equal( el.spectrum("get").toName(), "red", "Color is initialized");
   el.spectrum("set", "orange");
   assert.equal( el.spectrum("get").toName(), "orange", "Color is set");
-  $(document).click();
+  $(document).trigger('click');
   assert.equal( el.spectrum("get").toName(), "red", "Color is reverted after clicking 'cancel'");
   el.spectrum("destroy");
 
@@ -385,7 +385,7 @@ QUnit.test("clickoutFiresChange", function(assert) {
   assert.equal( el.spectrum("get").toName(), "red", "Color is initialized");
   el.spectrum("set", "orange");
   assert.equal( el.spectrum("get").toName(), "orange", "Color is set");
-  $(document).click();
+  $(document).trigger('click');
   assert.equal( el.spectrum("get").toName(), "orange", "Color is changed after clicking out");
   el.spectrum("destroy");
 });
@@ -531,7 +531,7 @@ QUnit.test("Toggle Picker Area button works as expected", function(assert) {
   assert.ok(spectrum.hasClass("sp-palette-only"), "The 'palette-only' class is enabled.");
 
   // Click the Picker area Toggle button to show the Picker
-  toggle.click();
+  toggle.trigger('click');
 
   assert.equal(picker.is(":hidden"), false, "After toggling, the picker area is visible.");
   assert.ok(!spectrum.hasClass("sp-palette-only"), "The 'palette-only' class is disabled.");
@@ -756,7 +756,7 @@ QUnit.test( "Cancelling reverts color", function(assert) {
   assert.equal( el.spectrum("get").toName(), "red", "Color is initialized");
   el.spectrum("set", "orange");
   assert.equal( el.spectrum("get").toName(), "orange", "Color is set");
-  el.spectrum("container").find(".sp-cancel").click();
+  el.spectrum("container").find(".sp-cancel").trigger('click');
   assert.equal( el.spectrum("get").toName(), "red", "Color is reverted after clicking 'cancel'");
   el.spectrum("destroy");
 });
@@ -767,7 +767,7 @@ QUnit.test( "Choosing updates the color", function(assert) {
   assert.equal( el.spectrum("get").toName(), "red", "Color is initialized");
   el.spectrum("set", "orange");
   assert.equal( el.spectrum("get").toName(), "orange", "Color is set");
-  el.spectrum("container").find(".sp-choose").click();
+  el.spectrum("container").find(".sp-choose").trigger('click');
   assert.equal( el.spectrum("get").toName(), "orange", "Color is kept after clicking 'choose'");
   el.spectrum("destroy");
 });
