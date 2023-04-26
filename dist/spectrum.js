@@ -21,6 +21,7 @@
         change: noop,
         show: noop,
         hide: noop,
+        onChoseValidate: noop,
 
         // Options
         color: false,
@@ -29,7 +30,8 @@
         showInput: false,
         allowEmpty: true,
         showButtons: true,
-        clickoutFiresChange: true,
+        clickoutFiresChange: false,
+        closeOnClickout: true,
         showInitial: false,
         showPalette: true,
         showPaletteOnly: false,
@@ -45,7 +47,6 @@
         togglePaletteMoreText: "more",
         togglePaletteLessText: "less",
         clearText: "Clear Color Selection",
-        noColorSelectedText: "No Color Selected",
         preferredFormat: "name",
         className: "", // Deprecated - use containerClassName and replacerClassName instead.
         containerClassName: "",
@@ -444,6 +445,12 @@
                 e.stopPropagation();
                 e.preventDefault();
 
+                if (typeof opts.onChoseValidate === 'function') {
+                    var colorObj = get();
+                    if (colorObj) colorObj.hex = colorObj.toString(currentPreferredFormat);
+                    opts.onChoseValidate(colorObj);
+                }
+
                 if (IE && textInput.is(":focus")) {
                     textInput.trigger('change');
                 }
@@ -716,7 +723,7 @@
             visible = true;
 
             $(doc).on("keydown.spectrum", onkeydown);
-            $(doc).on("click.spectrum", clickout);
+            if (opts.closeOnClickout) $(doc).on("click.spectrum", clickout);
             $(window).on("resize.spectrum", resize);
             
             replacer.attr("aria-expanded", true);
@@ -1859,6 +1866,9 @@
     // `equals`
     // Can be called with any tinycolor input
     tinycolor.equals = function (color1, color2) {
+        // empty stay empty
+        if (!color1 && !color2) { return true; }
+        // Only one of both are empty
         if (!color1 || !color2) { return false; }
         return tinycolor(color1).toRgbString() == tinycolor(color2).toRgbString();
     };
