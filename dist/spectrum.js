@@ -998,6 +998,11 @@
             alphaWidth = alphaSlider.width();
             alphaSlideHelperWidth = alphaSlideHelper.width();
 
+            // Draw palette before update offset position for prevent wrong top position
+            if (opts.showPalette) {
+                drawPalette();
+            }
+
             if (!flat) {
                 container.attr("aria-haspopup", true);
                 container.css("position", "absolute");
@@ -1009,10 +1014,6 @@
             }
 
             updateHelperLocations();
-
-            if (opts.showPalette) {
-                drawPalette();
-            }
 
             boundElement.trigger('reflow.spectrum');
         }
