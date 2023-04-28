@@ -9,4 +9,5 @@
 - Merge pull request [#40](https://github.com/seballot/spectrum/pull/40)
 - fix security alert with replace `$()` by `$(document).find()`
 - fix draw palette called before positionning
-- feat: feat: trigger show when click on colorizeElement
+- feat: trigger show when click on colorizeElement
+- feat: add option `closeOnClickout`
