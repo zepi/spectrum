@@ -362,7 +362,7 @@
             }
             else {
 
-                var appendTo = opts.appendTo === "parent" ? boundElement.parent() : jQuery(opts.appendTo);
+                var appendTo = opts.appendTo === "parent" ? boundElement.parent() : $(document).find(opts.appendTo);
                 if (appendTo.length !== 1) {
                     appendTo = $("body");
                 }
