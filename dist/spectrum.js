@@ -139,6 +139,7 @@
 
     function paletteTemplate (p, color, className, opts) {
         var html = $('<div></div>').addClass('sp-cf ' + className);
+
         for (var i = 0; i < p.length; i++) {
             var current = p[i];
             var spanOuter = $('<span></span>');
@@ -148,9 +149,9 @@
                 var c = tiny.toHsl().l < 0.5 ? "sp-thumb-el sp-thumb-dark" : "sp-thumb-el sp-thumb-light";
                 c += (tinycolor.equals(color, current)) ? " sp-thumb-active" : "";
                 var formattedString = tiny.toString(opts.preferredFormat || "rgb");
-                var swatchStyle = rgbaSupport ? ("background-color:" + tiny.toRgbString()) : "filter:" + tiny.toFilter();
+                var swatchStyle = rgbaSupport ? {'background-color': tiny.toRgbString()} : {'filter': tiny.toFilter()};
 
-                spanInner.addClass('sp-thumb-inner').css({'background-color': tiny.toRgbString(), 'filter': tiny.toFilter()});
+                spanInner.addClass('sp-thumb-inner').css(swatchStyle);
                 spanOuter.attr({
                     'title': formattedString,
                     'data-color': tiny.toRgbString(),
@@ -663,14 +664,14 @@
                 palettes.push(paletteTemplate(getUniqueSelectionPalette(), currentColor, "sp-palette-row sp-palette-row-selection", opts));
             }
 
-            paletteContainer.html('').append(palettes);
+            paletteContainer.empty().append(palettes);
         }
 
         function drawInitial() {
             if (opts.showInitial) {
                 var initial = colorOnShow;
                 var current = get();
-                initialColorContainer.append(paletteTemplate([initial, current], current, "sp-palette-row-initial", opts));
+                initialColorContainer.empty().append(paletteTemplate([initial, current], current, "sp-palette-row-initial", opts));
             }
         }
 
