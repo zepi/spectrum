@@ -139,7 +139,6 @@
 
     function paletteTemplate (p, color, className, opts) {
         var html = $('<div></div>').addClass('sp-cf ' + className);
-
         for (var i = 0; i < p.length; i++) {
             var current = p[i];
             var spanOuter = $('<span></span>');
